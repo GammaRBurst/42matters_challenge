@@ -1,0 +1,9 @@
+FROM python:3.8
+WORKDIR home
+RUN ["mkdir", "app"]
+WORKDIR app
+ADD main.py .
+ADD requirements.txt .
+RUN ["pip", "install", "-r", "requirements.txt"]
+RUN ["mkdir", "result"]
+CMD ["python3", "main.py"]
